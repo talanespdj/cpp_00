@@ -13,7 +13,7 @@ all: $(NAME)
         
 $(NAME): $(OBJS)
 	@$(CC) $(FLAGS) -o $(NAME) $(OBJS)
-	@echo "\033[1mSOUS MEGAPHONE\033[0m"
+	@echo "\033[1mmegaphone built\033[0m"
 
 clean:
 	@rm -rf $(OBJS)
