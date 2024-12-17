@@ -1,9 +1,9 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include <string.h>
-#include <iostream>
-#include <stdarg.h>
+# include <iostream>
+# include <string>
+# include <cstring>
 
 // class phonebook
 // {

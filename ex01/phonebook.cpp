@@ -10,30 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "phonebook.hpp"
-#include <sstream>
 
 int	main(void)
 {
-	char	**in = NULL;
 	std::string	temp;
 
 	std::getline(std::cin, temp);
+	while (temp != "EXIT")
+	{
+		if (temp == "ADD")
 
-	std::cout << temp << std::endl;
-		
-	// {
+		if (temp == "SEARCH")
 
-	// }
-	std::cout << 22 << std::endl;
-	// while (!(strcmp(, "EXIT")) // tant qu l'input n'est pas egal a "EXIT"
-	// {
-	// 	if (!(strcmp(in, "ADD"))
-	// 		add()
-	// 	if (!(strcmp(in, "SEARCH"))
-	// 	else
-	// }
-	std::cout << "Bien le bonsoir" << std::endl;
-	std::cout << "Trou du cul" << std::endl;
-	(void)in;
+		std::getline(std::cin, temp);
+	}
 	return (0);
 }
