@@ -9,6 +9,7 @@
 /*   Updated: 2024/12/13 01:38:13 by tespandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "contact.hpp"
 #include "phonebook.hpp"
 #include <stdio.h>
 
