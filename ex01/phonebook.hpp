@@ -12,15 +12,12 @@ class Phonebook
 		Contact	_contact[8];
 
 	public:
+		Phonebook();
+		void input_line();
 		std::string	line;
-		void input_line() {
-			std::getline(std::cin, line);
-		}
-		std::string retrieve_line() {
-			return (line);
-		}
-		void add() {
-		}
+		std::string retrieve_line();
+		void add();
+
 };
 
 #endif
