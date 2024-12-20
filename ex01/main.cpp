@@ -1,34 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tespandj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 01:15:47 by tespandj          #+#    #+#             */
-/*   Updated: 2024/12/13 01:38:13 by tespandj         ###   ########.fr       */
+/*   Updated: 2024/12/18 20:00:37 by tespandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "contact.hpp"
 #include "phonebook.hpp"
-#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <unistd.h>
 
 int	main(void)
 {
 	Phonebook 	all;
-	std::string	line;
+	// std::string	line;
 
 	// std::getline(std::cin, line);
-	while (line.compare("EXIT"))
+	while (true)
 	{
-		all.input_line();
-		if (!all.retrieve_line().find("ADD"))
-			std::cout << "on rentre dans la fonction add" << std:: endl;
-		else if (!all.retrieve_line().find("SEARCH"))
-			std::cout << "on rentre dans la fonction search" << std:: endl;
-		else
-			std::cout << "ADD // SEARCH // EXIT" << std:: endl;
-		// std::getline(std::cin, line);
+		all.increment();
+		std::cout << all.get_test() << std::endl;
+		usleep(450000);
+		if (all.get_test() % 10 == 0)
+			std::cout << "prout prout je suis pair hihi" << std::endl;
+
 	}
 	return (0);
 }
+
+/*
+	std::string 	line;
+
+	std::getline(std::cin, line);
+	while (true)
+	{
+		if (line.find("ADD"))
+			std::cout << "on rentre dans la fonction add" << std:: endl;
+		else if (line.find("SEARCH"))
+			std::cout << "on rentre dans la fonction search" << std:: endl;
+		else if  (line.find("EXIT"))
+			break;
+		else
+			std::cout << "ADD // SEARCH // EXIT" << std:: endl;
+		std::getline(std::cin, line);
+	}*/

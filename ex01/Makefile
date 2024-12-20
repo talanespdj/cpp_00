@@ -3,6 +3,7 @@ CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 
 
 SRCS = main.cpp \
+	contact.cpp \
 	phonebook.cpp \
 
 OBJS = $(SRCS:.cpp=.o) 

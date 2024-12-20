@@ -12,7 +12,7 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-# include "phonebook.hpp"
+# pragma once 
 # include <iostream>
 # include <string>
 # include <cstring>
@@ -27,7 +27,12 @@ class Contact
 		std::string	_dark_secret;
 	
 	public:
+			Contact(std::string f_name, std::string l_name, std::string nickname, std::string phone_number, std::string dark_secret);
+			~Contact();
+
 		void	aff_contacts(int n);
 };
+
+
 
 #endif

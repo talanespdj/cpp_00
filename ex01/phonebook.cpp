@@ -6,15 +6,35 @@
 /*   By: tespandj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:44:58 by tespandj          #+#    #+#             */
-/*   Updated: 2024/12/17 17:45:34 by tespandj         ###   ########.fr       */
+/*   Updated: 2024/12/18 19:50:46 by tespandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "phonebook.hpp"
+#include "contact.hpp"
+#include <iostream>
 
-void input_line() {
-        std::getline(std::cin, line);
+Phonebook::Phonebook() {
+	Contact		contact;
+
+	this->index = 0;
+	this->_contact[get_index()] = contact;
+	std::cout << "J'appelle mon constructeur qui va construire #build" << std::endl;
+	return ;
+
+};
+
+Phonebook::~Phonebook() {
+	std::cout << "J'appelle mon desstructeur qui va construire #build" << std::endl;
+	return ;
+
+};
+
+
+void	Phonebook::increment() {
+	this->index++;
 }
 
-std::string retrieve_line() {
-        return (line);
+int	Phonebook::get_index() {
+	return (this->index);
 }
+
