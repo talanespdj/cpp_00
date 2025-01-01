@@ -27,10 +27,11 @@ class Contact
 		std::string	_dark_secret;
 	
 	public:
-			Contact(std::string f_name, std::string l_name, std::string nickname, std::string phone_number, std::string dark_secret);
+			Contact();
 			~Contact();
 
 		void	aff_contacts(int n);
+		void	add_contact(std::string f_name, std::string l_name, std::string nickname, std::string phone_number, std::string dark_secret);
 };
 
 

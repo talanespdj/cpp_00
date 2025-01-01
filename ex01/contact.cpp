@@ -14,13 +14,8 @@
 #include <string>
 #include <cstring>
 
-Contact::Contact(std::string f_name, std::string l_name, std::string nickname, std::string phone_number, std::string dark_secret)
-{
-	this->_f_name = f_name;
-	this->_l_name = l_name;
-	this->_nickname = nickname;
-	this->_phone_number = phone_number;
-	this->_dark_secret = dark_secret;
+Contact::Contact(void) {
+	return ;
 };
 
 Contact::~Contact() {
@@ -34,4 +29,19 @@ void	aff_contacts(int n)
 	// std::cout << this->_nickname;
 	std::cout << std::endl;
 	(void)n;
+}
+
+void	add_contact(std::string f_name, std::string l_name, std::string nickname, std::string phone_number, std::string dark_secret)
+{
+	// this->_f_name = f_name;
+	// this->_l_name = l_name;
+	// this->_nickname = nickname;
+	// this->_phone_number = phone_number;
+	// this->_dark_secret = dark_secret;
+	(void)f_name;
+	(void)l_name;
+	(void)nickname;
+	(void)phone_number;
+	(void)dark_secret;
+	return ;
 }

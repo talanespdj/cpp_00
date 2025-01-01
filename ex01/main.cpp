@@ -24,9 +24,9 @@ int	main(void)
 	while (true)
 	{
 		all.increment();
-		std::cout << all.get_test() << std::endl;
+		std::cout << all.get_index() << std::endl;
 		usleep(450000);
-		if (all.get_test() % 10 == 0)
+		if (all.get_index() % 10 == 0)
 			std::cout << "prout prout je suis pair hihi" << std::endl;
 
 	}

@@ -14,10 +14,8 @@
 #include <iostream>
 
 Phonebook::Phonebook() {
-	Contact		contact;
-
 	this->index = 0;
-	this->_contact[get_index()] = contact;
+	// this->_contact[get_index()] = contact;
 	std::cout << "J'appelle mon constructeur qui va construire #build" << std::endl;
 	return ;
 
