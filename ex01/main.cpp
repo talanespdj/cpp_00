@@ -18,34 +18,20 @@
 int	main(void)
 {
 	Phonebook 	all;
-	// std::string	line;
+	std::string	line;
 
-	// std::getline(std::cin, line);
 	while (true)
 	{
-		all.increment();
-		std::cout << all.get_index() << std::endl;
-		usleep(450000);
-		if (all.get_index() % 10 == 0)
-			std::cout << "prout prout je suis pair hihi" << std::endl;
-
+		std::cout << ">";
+		std::getline(std::cin, line);
+		if (line.compare("EXIT") == 0)
+			break ;
+		else if (line.compare("ADD") == 0)
+			all.add(all);
+		else if (line.compare("SEARCH") == 0)
+			all.search(all);
+		else if (!(line.compare("")== 0))
+			std::cout << "Command not found" << std::endl;
 	}
 	return (0);
 }
-
-/*
-	std::string 	line;
-
-	std::getline(std::cin, line);
-	while (true)
-	{
-		if (line.find("ADD"))
-			std::cout << "on rentre dans la fonction add" << std:: endl;
-		else if (line.find("SEARCH"))
-			std::cout << "on rentre dans la fonction search" << std:: endl;
-		else if  (line.find("EXIT"))
-			break;
-		else
-			std::cout << "ADD // SEARCH // EXIT" << std:: endl;
-		std::getline(std::cin, line);
-	}*/

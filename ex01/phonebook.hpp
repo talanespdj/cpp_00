@@ -12,21 +12,24 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# pragma once 
 # include "contact.hpp"
 
 class Phonebook {
 	private:
 		int	index;
+		int	fullness;
 		Contact	_contact[8];
 	
 	public:
 			Phonebook();
 			~Phonebook();
 		
-		void	increment();
-		int	get_index();
-		// int	test;
+		void	add(Phonebook all);
+		void	search(Phonebook all);
+		int	nul();
+		int	get_fullness();
+		void	fuller();
+		void	lesser();
 };
 
 #endif
