@@ -13,7 +13,6 @@
 #include <iostream>
 
 Phonebook::Phonebook() {
-	this->fullness = 0;
 	this->index = 0;
 	// std::cout << "J'appelle mon constructeur qui va construire #build" << std::endl;
 	return ;
@@ -28,41 +27,84 @@ Phonebook::~Phonebook() {
 
 void	Phonebook::add(Phonebook all) {
 	
-	Contact		tmp;
-	std::string	f_name;
-	std::string	l_name;
-	std::string	nickname;
-	std::string	phone_number;
-	std::string	dark_secret;
+	std::string	line;
 
-	if (all.get_fullness() > 8) {
-		std::cout << "The phonebook is full." << std::endl;
-		return ;
+	if (index > 8)
+		index = 0;
+	while (true) {
+		std::cout << "First name : ";
+		std::getline(std::cin, line);
+		if (std::cin.eof())
+			exit(1);
+		if (line.empty())
+			std::cout << "Enter a valid first name golmon." << std::endl;
+		else {
+			all._contact[this->index].set_f(line);
+			break ;
+		}
 	}
-	std::cout << "First name : ";
-	std::getline(std::cin, f_name);
-	std::cout << "Last name : ";
-	std::getline(std::cin, l_name);
-	std::cout << "nickname : ";
-	std::getline(std::cin, nickname);
-	std::cout << "Phone number : ";
-	std::getline(std::cin, phone_number);
-	std::cout << "Darkest secret : ";
-	std::getline(std::cin, dark_secret);
-	tmp.add_contact(this->index, f_name, l_name, nickname, phone_number, dark_secret);
-	// while (all._contact)
-	tmp.show_contact();
-	all._contact[this->index] = tmp;
-	// all.fuller();
+	line.clear();
+	while (true) {
+		std::cout << "Last name : ";
+		std::getline(std::cin, line);
+		if (std::cin.eof())
+			exit(1);
+		if (line.empty())
+			std::cout << "Enter a valid first lastname golmon." << std::endl;
+		else {
+			all._contact[this->index].set_l(line);
+			break ;
+		}
+	}
+	line.clear();
+	while (true) {
+		std::cout << "nickname : ";
+		std::getline(std::cin, line);
+		if (std::cin.eof())
+			exit(1);
+		if (line.empty())
+			std::cout << "Enter a valid first nickname golmon." << std::endl;
+		else {
+			all._contact[this->index].set_n(line);
+			break ;
+		}
+	}
+	line.clear();
+	while (true) {
+		std::cout << "Phone number : ";
+		std::getline(std::cin, line);
+		if (std::cin.eof())
+			exit(1);
+		if (line.empty())
+			std::cout << "Enter a valid phone number golmon." << std::endl;
+		else {
+			all._contact[this->index].set_phone(line);
+			break ;
+		}
+	}
+	line.clear();
+	while (true) {
+		std::cout << "Darkest secret : ";
+		std::getline(std::cin, line);
+		if (std::cin.eof())
+			exit(1);
+		if (line.empty())
+			std::cout << "Enter a valid dark secret golmon." << std::endl;
+		else {
+			all._contact[this->index].set_dark(line);
+			break ;
+		}
+	}
+	line.clear();
+	all._contact[this->index].show_contact();
 	this->index++;
-	this->fullness++;
-	// std::cout << "index == " << index << " // fullness == " << fullness << std::endl;
 }
 
 void	Phonebook::search(Phonebook all) {
 	std::string	in;
-	// int		i = -1;
 
+	for (int x = 0; x < 8; x++)
+		all._contact[x].show_contact();
 	std::cout << "- ";
 	std::getline(std::cin, in);
 	while (in.size() > 1 || in[0] < '1' || in[0] > '8') {
@@ -70,25 +112,8 @@ void	Phonebook::search(Phonebook all) {
 		std::cout << "- ";
 		std::getline(std::cin, in);
 	}
+	
 	(void)all;
 
 }
 	// if (in.compare("1") || in.compare("2"), in.compare("3"), in.compare("4"), in.compare("5"), in.compare("6"), in.compare("7"), in.compare("8"))
-
-void	Phonebook::fuller() {
-	this->fullness++;
-}
-
-void	Phonebook::lesser() {
-	this->fullness--;
-}
-
-int	Phonebook::get_fullness() {
-	return(this->fullness);
-}
-
-int	Phonebook::nul() {
-	if (this->fullness == 0)
-		return (1);
-	return (0);
-}

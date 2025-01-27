@@ -17,7 +17,6 @@
 class Phonebook {
 	private:
 		int	index;
-		int	fullness;
 		Contact	_contact[8];
 	
 	public:
@@ -26,10 +25,6 @@ class Phonebook {
 		
 		void	add(Phonebook all);
 		void	search(Phonebook all);
-		int	nul();
-		int	get_fullness();
-		void	fuller();
-		void	lesser();
 };
 
 #endif

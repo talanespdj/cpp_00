@@ -24,6 +24,8 @@ int	main(void)
 	{
 		std::cout << ">";
 		std::getline(std::cin, line);
+		if (std::cin.eof())
+			break ;
 		if (line.compare("EXIT") == 0)
 			break ;
 		else if (line.compare("ADD") == 0)
@@ -31,7 +33,8 @@ int	main(void)
 		else if (line.compare("SEARCH") == 0)
 			all.search(all);
 		else if (!(line.compare("")== 0))
-			std::cout << "Command not found" << std::endl;
+			std::cout << "Invalid cmd -> " << line << std::endl;
+
 	}
 	return (0);
 }

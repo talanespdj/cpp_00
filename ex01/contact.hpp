@@ -30,10 +30,17 @@ class Contact
 			Contact();
 			~Contact();
 
-		// int	not_empty();
-		int	not_empty(Contact pers);
-		void	show_contact();
-		void	add_contact(int id, std::string f_name, std::string l_name, std::string nickname, std::string phone_number, std::string dark_secret);
+		void		show_contact();
+		std::string	get_f();
+		std::string	get_l();
+		std::string	get_n();
+		std::string	get_phone();
+		std::string	get_dark();
+		void		set_f(std::string data);
+		void		set_l(std::string data);
+		void		set_n(std::string data);
+		void		set_phone(std::string data);
+		void		set_dark(std::string data);
 };
 
 #endif
