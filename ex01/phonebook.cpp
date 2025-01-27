@@ -96,6 +96,7 @@ void	Phonebook::add(Phonebook all) {
 		}
 	}
 	line.clear();
+	all._contact[this->index].set_id(this->index + 1);
 	all._contact[this->index].show_contact();
 	this->index++;
 }

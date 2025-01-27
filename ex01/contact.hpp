@@ -31,11 +31,13 @@ class Contact
 			~Contact();
 
 		void		show_contact();
+		int		get_id();
 		std::string	get_f();
 		std::string	get_l();
 		std::string	get_n();
 		std::string	get_phone();
 		std::string	get_dark();
+		void		set_id(int id);
 		void		set_f(std::string data);
 		void		set_l(std::string data);
 		void		set_n(std::string data);

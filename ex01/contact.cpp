@@ -38,6 +38,10 @@ void	Contact::show_contact() {
 	std::cout << std::endl;
 }
 
+int		Contact::get_id() {
+	return (this->_id);
+}
+
 std::string	Contact::get_f() {
 	return (this->_f_name);
 }
@@ -56,6 +60,10 @@ std::string	Contact::get_phone() {
 
 std::string	Contact::get_dark() {
 	return (this->_dark_secret);
+}
+
+void		Contact::set_id(int id) {
+	this->_id = id;
 }
 
 void	Contact::set_f(std::string data) {
