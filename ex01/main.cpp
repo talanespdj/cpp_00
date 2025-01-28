@@ -29,12 +29,11 @@ int	main(void)
 		if (line.compare("EXIT") == 0)
 			break ;
 		else if (line.compare("ADD") == 0)
-			all.add(all);
+			all.add();
 		else if (line.compare("SEARCH") == 0)
-			all.search(all);
+			all.search();
 		else if (!(line.compare("")== 0))
 			std::cout << "Invalid cmd -> " << line << std::endl;
-
 	}
 	return (0);
 }

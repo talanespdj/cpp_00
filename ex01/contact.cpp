@@ -20,22 +20,18 @@ Contact::Contact() {
 Contact::~Contact() {
 }
 
-void	Contact::show_contact() {
-	int	i = -1;
-
-	(void)i;
-	if (!get_f()[0]) {
-
-		std::cout << "je sors ici" << std::endl;
-		return ;
+int	Contact::show_contact() {
+	if (get_f().empty()) {
+		return (0) ;
 	}
-	std::cout << &index << " |";
+	std::cout << get_id() << " |";
 	std::cout << get_f() << "|";
 	std::cout << get_l() << "|";
-	std::cout << get_n() << "|";
+	std::cout << get_n();
 	// std::cout << get_phone << "|";
 	// std::cout << get_dark << "|";
 	std::cout << std::endl;
+	return (1);
 }
 
 int		Contact::get_id() {

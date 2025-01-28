@@ -23,8 +23,8 @@ class Phonebook {
 			Phonebook();
 			~Phonebook();
 		
-		void	add(Phonebook all);
-		void	search(Phonebook all);
+		void	add();
+		void	search();
 };
 
 #endif

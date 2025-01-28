@@ -11,26 +11,24 @@
 /* ************************************************************************** */
 #include "phonebook.hpp"
 #include <iostream>
+#include <cstdlib>
 
 Phonebook::Phonebook() {
 	this->index = 0;
-	// std::cout << "J'appelle mon constructeur qui va construire #build" << std::endl;
 	return ;
 
 };
 
 Phonebook::~Phonebook() {
-	// std::cout << "J'appelle mon desstructeur qui va construire #build" << std::endl;
 	return ;
 
 };
 
-void	Phonebook::add(Phonebook all) {
-	
+void	Phonebook::add() {
 	std::string	line;
 
-	if (index > 8)
-		index = 0;
+	if (this->index == 7)
+		this->index = 0;
 	while (true) {
 		std::cout << "First name : ";
 		std::getline(std::cin, line);
@@ -39,7 +37,7 @@ void	Phonebook::add(Phonebook all) {
 		if (line.empty())
 			std::cout << "Enter a valid first name golmon." << std::endl;
 		else {
-			all._contact[this->index].set_f(line);
+			this->_contact[this->index].set_f(line);
 			break ;
 		}
 	}
@@ -52,7 +50,7 @@ void	Phonebook::add(Phonebook all) {
 		if (line.empty())
 			std::cout << "Enter a valid first lastname golmon." << std::endl;
 		else {
-			all._contact[this->index].set_l(line);
+			this->_contact[this->index].set_l(line);
 			break ;
 		}
 	}
@@ -65,7 +63,7 @@ void	Phonebook::add(Phonebook all) {
 		if (line.empty())
 			std::cout << "Enter a valid first nickname golmon." << std::endl;
 		else {
-			all._contact[this->index].set_n(line);
+			this->_contact[this->index].set_n(line);
 			break ;
 		}
 	}
@@ -78,7 +76,7 @@ void	Phonebook::add(Phonebook all) {
 		if (line.empty())
 			std::cout << "Enter a valid phone number golmon." << std::endl;
 		else {
-			all._contact[this->index].set_phone(line);
+			this->_contact[this->index].set_phone(line);
 			break ;
 		}
 	}
@@ -91,21 +89,24 @@ void	Phonebook::add(Phonebook all) {
 		if (line.empty())
 			std::cout << "Enter a valid dark secret golmon." << std::endl;
 		else {
-			all._contact[this->index].set_dark(line);
+			this->_contact[this->index].set_dark(line);
 			break ;
 		}
 	}
-	line.clear();
-	all._contact[this->index].set_id(this->index + 1);
-	all._contact[this->index].show_contact();
+	this->_contact[this->index].set_id(this->index + 1);
 	this->index++;
 }
 
-void	Phonebook::search(Phonebook all) {
+void	Phonebook::search() {
 	std::string	in;
+	int	c = 0;
 
 	for (int x = 0; x < 8; x++)
-		all._contact[x].show_contact();
+		c += this->_contact[x].show_contact();
+	if (c == 0) {
+		std::cout << "No contact registered. Tap ADD to add one." << std::endl;
+		return ;
+	}
 	std::cout << "- ";
 	std::getline(std::cin, in);
 	while (in.size() > 1 || in[0] < '1' || in[0] > '8') {
@@ -113,8 +114,5 @@ void	Phonebook::search(Phonebook all) {
 		std::cout << "- ";
 		std::getline(std::cin, in);
 	}
-	
-	(void)all;
-
+	this->_contact[(in[0]) - 49].show_contact();
 }
-	// if (in.compare("1") || in.compare("2"), in.compare("3"), in.compare("4"), in.compare("5"), in.compare("6"), in.compare("7"), in.compare("8"))

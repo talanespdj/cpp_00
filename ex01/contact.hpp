@@ -30,7 +30,7 @@ class Contact
 			Contact();
 			~Contact();
 
-		void		show_contact();
+		int		show_contact();
 		int		get_id();
 		std::string	get_f();
 		std::string	get_l();
