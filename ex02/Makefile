@@ -1,10 +1,9 @@
-NAME = phonebook
+NAME = Bankaccount
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 
 
-SRCS = main.cpp \
-	contact.cpp \
-	phonebook.cpp \
+SRCS = tests.cpp \
+       Account.cpp \
 
 OBJS = $(SRCS:.cpp=.o) 
 
@@ -15,7 +14,7 @@ all: $(NAME)
         
 $(NAME): $(OBJS)
 	@$(CC) $(FLAGS) -o $(NAME) $(OBJS)
-	@echo "\033[1mphonebook built\033[0m"
+	@echo "\033[1mbankaccount built\033[0m"
 
 clean:
 	@rm -rf $(OBJS)
