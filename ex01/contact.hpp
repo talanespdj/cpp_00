@@ -43,6 +43,7 @@ class Contact
 		void		set_n(std::string data);
 		void		set_phone(std::string data);
 		void		set_dark(std::string data);
+		void		ten_char(std::string data);
 };
 
 #endif

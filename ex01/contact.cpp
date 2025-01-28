@@ -24,14 +24,25 @@ int	Contact::show_contact() {
 	if (get_f().empty()) {
 		return (0) ;
 	}
-	std::cout << get_id() << " |";
-	std::cout << get_f() << "|";
-	std::cout << get_l() << "|";
-	std::cout << get_n();
-	// std::cout << get_phone << "|";
-	// std::cout << get_dark << "|";
+	std::cout << get_id() << "         |";
+	ten_char(get_f());
+	std::cout << "|";
+	ten_char(get_l());
+	std::cout << "|";
+	ten_char(get_n());
 	std::cout << std::endl;
 	return (1);
+}
+
+void	Contact::ten_char(std::string data) {
+	if (data.size() < 10) {
+		std::cout << data;
+		for (int i = 10 - data.size(); i > 0; i--)
+			std::cout << " ";
+	}
+	else 
+		for (int i = 0; i < 10; i++)
+			std::cout << data[i];
 }
 
 int		Contact::get_id() {

@@ -33,7 +33,7 @@ int	main(void)
 		else if (line.compare("SEARCH") == 0)
 			all.search();
 		else if (!(line.compare("")== 0))
-			std::cout << "Invalid cmd -> " << line << std::endl;
+			std::cout << "ADD | SEARCH | EXIT" << std::endl;
 	}
 	return (0);
 }

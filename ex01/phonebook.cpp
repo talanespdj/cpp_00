@@ -27,7 +27,7 @@ Phonebook::~Phonebook() {
 void	Phonebook::add() {
 	std::string	line;
 
-	if (this->index == 7)
+	if (this->index == 8)
 		this->index = 0;
 	while (true) {
 		std::cout << "First name : ";
@@ -35,7 +35,7 @@ void	Phonebook::add() {
 		if (std::cin.eof())
 			exit(1);
 		if (line.empty())
-			std::cout << "Enter a valid first name golmon." << std::endl;
+			std::cout << "Enter a valid first name." << std::endl;
 		else {
 			this->_contact[this->index].set_f(line);
 			break ;
@@ -48,7 +48,7 @@ void	Phonebook::add() {
 		if (std::cin.eof())
 			exit(1);
 		if (line.empty())
-			std::cout << "Enter a valid first lastname golmon." << std::endl;
+			std::cout << "Enter a valid first lastname." << std::endl;
 		else {
 			this->_contact[this->index].set_l(line);
 			break ;
@@ -61,7 +61,7 @@ void	Phonebook::add() {
 		if (std::cin.eof())
 			exit(1);
 		if (line.empty())
-			std::cout << "Enter a valid first nickname golmon." << std::endl;
+			std::cout << "Enter a valid first nickname." << std::endl;
 		else {
 			this->_contact[this->index].set_n(line);
 			break ;
@@ -74,7 +74,7 @@ void	Phonebook::add() {
 		if (std::cin.eof())
 			exit(1);
 		if (line.empty())
-			std::cout << "Enter a valid phone number golmon." << std::endl;
+			std::cout << "Enter a valid phone number." << std::endl;
 		else {
 			this->_contact[this->index].set_phone(line);
 			break ;
@@ -87,7 +87,7 @@ void	Phonebook::add() {
 		if (std::cin.eof())
 			exit(1);
 		if (line.empty())
-			std::cout << "Enter a valid dark secret golmon." << std::endl;
+			std::cout << "Enter a valid dark secret." << std::endl;
 		else {
 			this->_contact[this->index].set_dark(line);
 			break ;
@@ -109,10 +109,20 @@ void	Phonebook::search() {
 	}
 	std::cout << "- ";
 	std::getline(std::cin, in);
+	if (std::cin.eof())
+		exit(1);
 	while (in.size() > 1 || in[0] < '1' || in[0] > '8') {
-		std::cout << "Enter a valid number please // 1 to 8" << std::endl;
+		if (std::cin.eof())
+			exit(1);
+		std::cout << "Enter a valid index, 1 to 8." << std::endl;
 		std::cout << "- ";
 		std::getline(std::cin, in);
 	}
-	this->_contact[(in[0]) - 49].show_contact();
+	if (_contact[(in[0]) - 49].get_f().empty()) {
+		std::cout << "No contact registered at this index." << std::endl;
+		return ;
+	}
+	std::cout << "First name : " << _contact[(in[0]) - 49].get_f() << std::endl;
+	std::cout << "Last name : " << _contact[(in[0]) - 49].get_l() << std::endl;
+	std::cout << "Nickname : " << _contact[(in[0]) - 49].get_n() << std::endl;
 }
