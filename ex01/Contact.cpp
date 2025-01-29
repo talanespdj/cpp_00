@@ -9,7 +9,7 @@
 /*   Updated: 2024/12/17 17:47:51 by tespandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "contact.hpp"
+#include "Contact.hpp"
 #include <iostream>
 #include <string>
 #include <cstring>

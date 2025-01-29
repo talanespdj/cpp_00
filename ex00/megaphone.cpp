@@ -22,16 +22,13 @@ std::string	UP_stringcase(std::string in)
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int	i = 0;
 
 	if (argc <= 1)
-		std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *"  << std:: endl;
+		std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
-	{
-		i = 0;
 		while (argv[++i])
 			std:: cout << UP_stringcase(argv[i]);
-		std:: cout << std:: endl;
-	}
+	std:: cout << std:: endl;
 	return (0);
 }

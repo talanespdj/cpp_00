@@ -1,9 +1,9 @@
-NAME = bankaccount
+NAME = bankacc 
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 
 
 SRCS = tests.cpp \
-       Account.cpp \
+	Account.cpp \
 
 OBJS = $(SRCS:.cpp=.o) 
 

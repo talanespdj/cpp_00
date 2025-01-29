@@ -9,10 +9,11 @@
 /*   Updated: 2024/12/18 19:46:22 by tespandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#pragma once
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include "contact.hpp"
+# include "Contact.hpp"
 
 class Phonebook {
 	private:

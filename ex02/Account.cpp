@@ -11,6 +11,10 @@
 /* ************************************************************************** */
 #include "Account.hpp"
 #include <iostream>
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <ctime>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -33,27 +37,11 @@ Account::~Account( void ) {
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed\n";		
 }
 
-int	Account::getNbAccounts(void) {
-	return (_nbAccounts);
-}
-
-int	Account::getTotalAmount( void ) {
-	return (_totalAmount);
-}
-
-int	Account::getNbDeposits( void ) {
-	return (_totalNbDeposits);
-}
-
-int	Account::getNbWithdrawals( void ) {
-	return (_totalNbWithdrawals);
-}
-
 void	Account::_displayTimestamp( void ) {
 
 	std::time_t	ttt;
 	struct tm	*timeinfo;
-	char		buffer[20];
+	char		buffer[19];
 
 	time(&ttt);
 	timeinfo = localtime(&ttt);
@@ -99,4 +87,20 @@ void	Account::displayStatus( void ) const {
 
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
+}
+
+int	Account::getNbAccounts(void) {
+	return (_nbAccounts);
+}
+
+int	Account::getTotalAmount( void ) {
+	return (_totalAmount);
+}
+
+int	Account::getNbDeposits( void ) {
+	return (_totalNbDeposits);
+}
+
+int	Account::getNbWithdrawals( void ) {
+	return (_totalNbWithdrawals);
 }

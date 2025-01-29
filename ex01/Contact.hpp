@@ -9,6 +9,7 @@
 /*   Updated: 2024/12/17 17:45:14 by tespandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#pragma once
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
