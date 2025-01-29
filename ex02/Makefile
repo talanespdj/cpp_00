@@ -1,4 +1,4 @@
-NAME = Bankaccount
+NAME = bankaccount
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 
 

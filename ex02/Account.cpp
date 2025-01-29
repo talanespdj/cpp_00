@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "Account.hpp"
+#include <iostream>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -49,10 +50,18 @@ int	Account::getNbWithdrawals( void ) {
 }
 
 void	Account::_displayTimestamp( void ) {
-	std::time_t	t = std::time(NULL);
-	
-	std::cout << "[" << strftime(NULL, t, NULL, NULL) << "]";
+
+	std::time_t	ttt;
+	struct tm	*timeinfo;
+	char		buffer[20];
+
+	time(&ttt);
+	timeinfo = localtime(&ttt);
+	strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", timeinfo);
+
+	std::cout << buffer;
 }
+
 void	Account::displayAccountsInfos( void ) {
 
 	_displayTimestamp();
