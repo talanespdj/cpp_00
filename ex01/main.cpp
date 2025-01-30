@@ -26,13 +26,13 @@ int	main(void)
 		std::getline(std::cin, line);
 		if (std::cin.eof())
 			break ;
-		if (line.compare("EXIT") == 0)
+		if (line == "EXIT")
 			break ;
-		else if (line.compare("ADD") == 0)
+		else if (line == "ADD")
 			all.add();
-		else if (line.compare("SEARCH") == 0)
+		else if (line == "SEARCH")
 			all.search();
-		else if (!(line.compare("")== 0))
+		else if (line != "")
 			std::cout << "ADD | SEARCH | EXIT" << std::endl;
 	}
 	return (0);

@@ -24,6 +24,16 @@ Phonebook::~Phonebook() {
 
 };
 
+static inline bool	invalid_line(const std::string &line)
+{
+	if (line.empty())
+		return (true);
+	for (std::string::const_iterator it = line.begin(); it != line.end() ; ++it)
+		if (!std::isalnum(*it) && *it != ' ' && *it != '_' && *it != '-' && *it != '+')
+			return (true);
+	return (false);
+}
+
 void	Phonebook::add() {
 	std::string	line;
 
@@ -34,59 +44,55 @@ void	Phonebook::add() {
 		std::getline(std::cin, line);
 		if (std::cin.eof())
 			exit(1);
-		if (line.empty())
+		if (invalid_line(line))
 			std::cout << "Enter a valid first name." << std::endl;
 		else {
 			this->_contact[this->index].set_f(line);
 			break ;
 		}
 	}
-	line.clear();
 	while (true) {
 		std::cout << "Last name : ";
 		std::getline(std::cin, line);
 		if (std::cin.eof())
 			exit(1);
-		if (line.empty())
+		if (invalid_line(line))
 			std::cout << "Enter a valid first lastname." << std::endl;
 		else {
 			this->_contact[this->index].set_l(line);
 			break ;
 		}
 	}
-	line.clear();
 	while (true) {
 		std::cout << "nickname : ";
 		std::getline(std::cin, line);
 		if (std::cin.eof())
 			exit(1);
-		if (line.empty())
+		if (invalid_line(line))
 			std::cout << "Enter a valid first nickname." << std::endl;
 		else {
 			this->_contact[this->index].set_n(line);
 			break ;
 		}
 	}
-	line.clear();
 	while (true) {
 		std::cout << "Phone number : ";
 		std::getline(std::cin, line);
 		if (std::cin.eof())
 			exit(1);
-		if (line.empty())
+		if (invalid_line(line))
 			std::cout << "Enter a valid phone number." << std::endl;
 		else {
 			this->_contact[this->index].set_phone(line);
 			break ;
 		}
 	}
-	line.clear();
 	while (true) {
 		std::cout << "Darkest secret : ";
 		std::getline(std::cin, line);
 		if (std::cin.eof())
 			exit(1);
-		if (line.empty())
+		if (invalid_line(line))
 			std::cout << "Enter a valid dark secret." << std::endl;
 		else {
 			this->_contact[this->index].set_dark(line);
